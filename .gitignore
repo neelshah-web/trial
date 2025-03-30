@@ -1,0 +1,14 @@
+# Ignore environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignore node modules
+node_modules/
+
+# Ignore package lock file
+package-lock.json
+
+# Vercel
+.vercel
