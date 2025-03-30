@@ -2,16 +2,16 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDW6xYhPULy3zscjHDn1Lo5lrjBUxO1BAo",
-  authDomain: "queryboard-c163f.firebaseapp.com",
-  projectId: "queryboard-c163f",
-  storageBucket: "queryboard-c163f.firebasestorage.app",
-  messagingSenderId: "937141219123",
-  appId: "1:937141219123:web:59b3d3117f67b68e6e9846"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Log configuration in development to help debug
-if (process.env.NODE_ENV === 'development') {
+if (import.meta.env.DEV) {
   console.log('Firebase Config:', {
     ...firebaseConfig,
     apiKey: firebaseConfig.apiKey ? '[EXISTS]' : '[MISSING]',
